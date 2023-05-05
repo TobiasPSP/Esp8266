@@ -220,6 +220,62 @@ When you click one of the buttons you see that you actually built a webservice. 
 When you enter an illegal url (one for which no action exists in the sketch), an error message will be added to the web page.
 
 
+## Generating a Morse Code Emitter
 
+To show how your ESP8266 webservice can be controlled externally, here is a **PowerShell** script that calls the webservice Urls to control your hardware.
+
+In fact, the **PowerShell** code first utilizes another webservice (public and free but limited to 10 requests per hour) that turns text into morse code.
+
+Next, the script uses your internal ESP8266 webservice to blink the LED and send out the morse code. Of course, you could now as well add a MosFet to your ESP8266 and use a high power led to send out the morse code.
+
+> Remember to **update your IP address** in this script: change the IP address to the IP address assigned to your ESP8266 webserver.
+
+```powershell
+
+$ProgressPreference = 'SilentlyContinue'
+
+$text = Read-Host -Prompt 'Enter your text to convert to morse code'
+
+# convert text to morse code
+Add-Type -AssemblyName System.Web
+$encoded = [System.Web.HttpUtility]::UrlEncode($Text)
+
+# compose web service URL
+$urlExternal = "https://api.funtranslations.com/translate/morse.json?text=$encoded"
+
+# call web service
+$morse = (Invoke-RestMethod -UseBasicParsing -Uri $urlExternal).contents.translated
+
+$morse
+
+# send morse code to ESP8266
+
+# url for our webservice running on ESP8266 (make sure you adjust the IP address to match yours):
+$urlInternal = 'http://192.168.68.125/led'
+
+$timing = @{
+    '.' = {
+            $null = Invoke-WebRequest -UseBasicParsing -Uri "$urlInternal/on"
+            Start-Sleep -Milliseconds 50
+            $null = Invoke-WebRequest -UseBasicParsing -Uri "$urlInternal/off"
+            Start-Sleep -Milliseconds 200
+          }
+    '-' = {
+            $null = Invoke-WebRequest -UseBasicParsing -Uri "$urlInternal/on"
+            Start-Sleep -Milliseconds 500
+            $null = Invoke-WebRequest -UseBasicParsing -Uri "$urlInternal/off"
+            Start-Sleep -Milliseconds 200
+          }
+    ' ' = { Start-Sleep -Milliseconds 500 }
+}
+
+
+$morse.ToCharArray() | 
+    ForEach-Object { 
+        Write-Host $_ -NoNewline
+        & $timing[[string]$_] 
+        
+    } 
+```
 
 
