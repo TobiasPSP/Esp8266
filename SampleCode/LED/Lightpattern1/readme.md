@@ -120,6 +120,8 @@ void loop() {
 
 The light pattern is defined in `pattern1` and consists of the pattern timings in milliseconds.
 
+Note how the programming does not use any *Sleep* commands. Instead it is completely clock-driven and keeps the MCU responsive at all times. So you can still use interrupts.
+
 ## Emitting Pin
 
 The emitting pin is defined in `PINMOSFET1` (default is **D7**). `PINMOSFET2` is not implemented yet and will be used in the future for two-lamp-patterns.
