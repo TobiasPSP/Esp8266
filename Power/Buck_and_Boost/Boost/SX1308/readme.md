@@ -16,7 +16,7 @@ The claims for this chip often do not match reality:
 
 * The maximum output current *will not reach 2A*. Instead, the meximum output current significantly depends on the input and output voltages you need and will never dependably exceed 1.2A. For relatively small input voltages of i.e. 3V and relatively large output voltages of 12V (low input voltage and large voltage delta), maximum current can be less than 500mA.
 * When the maximum current is reached, output voltage will start to drop, and conversion efficiency will drop as well.
-* This all is most likely happening due to an internal current capture at **input** current.
+* This all is most likely happening due to an internal current capture at **input** current and built-in thermal protection.
 * the output voltage starts to collapse, and the efficiency decreases with increasing current (input current increases disporportionally). 
 * Even within current specs, output voltage is not very stable and may vary by some hundred mV.
 * Input voltage needs to be 3V at minimum
