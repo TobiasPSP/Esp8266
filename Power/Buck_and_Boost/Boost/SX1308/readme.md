@@ -19,4 +19,6 @@ The claims for this chip often do not match reality:
 
 This chip *can* be a good (cheap) way to go for some scenarios but you might want to test first with the particular input and output voltages you need. [Here](https://www.matts-electronics.com/wp-content/uploads/2018/06/SX1308.pdf) are some good graphs to guide you.
 
+Especially when you need just a couple hundreds of output mA and/or submit a relatively high input voltage of >9V, this chip may be very reasonable.
+
 
