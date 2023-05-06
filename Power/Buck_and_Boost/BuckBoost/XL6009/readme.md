@@ -9,6 +9,12 @@ The regulator chip *XL6009* is a popular high-power *buck and boost* converter w
 | --- | --- | --- | --- | --- |
 | 3.2-32V | 4-38V | 4A | 400kHz | low (€ 0.70/piece for boost-only, € 2 for buck-boost) |
 
+The chip has an *Enable* pin. When this pin is floating, the device is activated and output voltage is available. When this pin is connected to ground, the device is *disabled*, and no output voltage is available.
+
+Not all boards expose the *Enable* pin. If it is available, in most PCB designs you find it close to the *input* terminals as a separate connection labeled **En**.
+
+> Take into consideration that *XL6009* comes with a built-in *soft start* feature: when a load is connected, current starts to grow slowly over time (of course within a very short and hardly noticable time interval). Soft starts can however interfere when you build i.e. emergency lamps with high frequency blink patterns as LEDs will not provide full brightness at first. If the blink interval is short, this is noticeable.
+
 [Datasheet](https://www.haoyuelectronics.com/Attachment/XL6009/XL6009-DC-DC-Converter-Datasheet.pdf)
 
 ## Real World Considerations
