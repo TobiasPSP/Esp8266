@@ -17,6 +17,15 @@ The claims for this chip often do not match reality:
 * The output voltage is not very stable and drops finally when current is too high
 * Input voltage needs to be 3V at minimum
 
+Here are some realistic guesses for maximum current:
+
+| Boost | Max Current |
+| --- | --- |
+| 3.7V > 12V | 450mA |
+5V > 12V | 700mA |
+12V > 19V | 1.2A |
+12V > 24V | 800mA |
+
 This chip *can* be a good (cheap) way to go for some scenarios but you might want to test first with the particular input and output voltages you need. [Here](https://www.matts-electronics.com/wp-content/uploads/2018/06/SX1308.pdf) are some good graphs to guide you.
 
 Especially when you need just a couple hundreds of output mA and/or submit a relatively high input voltage of >9V, this chip may be very reasonable.
