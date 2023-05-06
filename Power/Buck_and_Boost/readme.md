@@ -1,8 +1,8 @@
 # Power Supplies in Electronics
 
-Most if not all electonic projects need power supplies, whether discrete or microcontroller-based.
+Most if not all electonic projects need power supplies, whether discrete or microcontroller-based. Power supplies take an input voltage and transform it to the required output voltage that your project needs.
 
-These days, no one uses old-fashioned expensive and heavy transformers anymore for this. Instead, electronic "switching* supplies are used.
+In the old days, old-fashioned expensive and heavy transformers were used for this, and they still are when you want to convert high voltage **AC** (i.e. from your household sockets) to low-voltage **DC**. Most of the time, though - and especially when you deal with **DC** input - electronic "switching* supplies are used today.
 
 There are two different basic concepts in use today: *Buck* and *Boost*. 
 
@@ -10,14 +10,14 @@ There are two different basic concepts in use today: *Buck* and *Boost*.
 
 In the past, voltage was *transformed* to different levels by use of transformers. They used two separate coils with different numbers of windings to increase or decrease voltage through magnetic fields. 
 
-Aside from the fact that transformers are heavy and expensive, they also only work with AC (not DC) and are inflexible. You cannot simply change the output voltage.
+Aside from the fact that transformers are heavy and expensive, they also only work with AC (not DC) because they need magnetic fields, and are inflexible. You cannot simply change the output voltage without changing the number of windings in the coil.
 
-Electronic switching power supplies go a different route and increase or decrease voltage by use of high-frequency switching. To increase voltage, for example, capacitors are used to charge up in one cycle, then submit their energy. If this is done in high frequency, the voltage can be increased almost arbitrarily.
+Electronic switching power supplies go a different route and increase or decrease voltage by use of high-frequency switching. To increase voltage, for example, capacitors are used to charge up in one cycle, then submit their energy. If this is done in high frequency, the voltage can be increased almost arbitrarily (at the expense of current which is lowered). Switching power supplies work with **DC** only.
 
 Switching power supplies have a number of advantages:
 
-* **Flexible**: they can increase or decrease voltage
-* **Cheap**: since they just need a couple of discrete components and a IC, they are cheap to manufacture, small and light-weight.
+* **Flexible**: they can increase or decrease voltage, and you can adjust the voltaqge using a simple resistor (or potentiometer)
+* **Cheap**: since they just need a couple of discrete components and an IC (the regulator), they are cheap to manufacture, small and light-weight.
 * **Current Control**: in addition to voltage regulation, they *can* (not all do) also limit *current* to a maximum. This is called *constant current* (**CC**, versus *constant-voltage* **CV**) and is achieved by increasing the voltage until the specified current is drawn.
 
 ## Buck-Converters
