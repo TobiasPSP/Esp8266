@@ -11,7 +11,7 @@ The regulator chip *SX1308* is a small and cheap boost converter with the follow
 The claims for this chip often do not match reality:
 
 * The maximum output current will not reach 2A. Instead, the output voltage starts to collapse, and the efficiency decreases with increasing current (input current increases disporportionally). 
-* A more realistic maximum current would probably be around 0.5-1.4A depending on input and output voltages. 
+* A more realistic maximum current would probably be around 0.5-1.2A depending on input and output voltages. 
 * Typically, low input voltages will provide the least maximum output current (as expected)
 * The higher the delta between input and output voltage, the earlier will you see a voltage drop
 * The output voltage is not very stable and drops finally when current is too high
