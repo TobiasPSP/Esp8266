@@ -1,6 +1,6 @@
 # XL6009
 
-The regulator chip *XL6009* is a popular high-power *buck and boost* converter with a claimed maximum currency of **4A**. Today, it is often replaced by its successor *XL6019* which features a maximum currency of **5A*.
+The regulator chip *XL6009* is a popular high-power *buck and boost* converter with a claimed maximum currency of **4A**. Today, it is often replaced by its successor *XL6019* which features a maximum currency of **5A**.
 
 > Whether a board with *XL6009* works as a buck, boost, or book-and-boost converter depends on the board design. There are cheap boards for around €0.70/piece that do a one-way boost as well as more sophisticated boards for around €2 that do buck and boost.
 > Typically, boards with just *one* coil element go just one way, and boards with *two* coil elements do buck and boost.
