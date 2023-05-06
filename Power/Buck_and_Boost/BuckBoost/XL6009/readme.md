@@ -9,7 +9,11 @@ The regulator chip *XL6009* is a popular high-power *buck and boost* converter w
 | --- | --- | --- | --- | --- |
 | 3.2-32V | 4-38V | 4A | 400kHz | low (€ 0.70/piece for boost-only, € 2 for buck-boost) |
 
-The chip has an *Enable* pin. When this pin is floating, the device is activated and output voltage is available. When this pin is connected to ground, the device is *disabled*, and no output voltage is available.
+The chip has an *Enable* pin. When this pin is floating, the device is activated and output voltage is available. When this pin is connected to ground, the device is *disabled*, and no output voltage is available. The chip shares ground with input and output, so it does not matter which ground you connect to *Enable*.
+
+> Notice that you cannot connect *Enable* directly to a microcontroller due to the voltage differences. Instead, use a simple transistor such as *2N2222* and a *10K* resistor between base and mc pin. Connect the emitter (pin 1) to ground, and the collector (pin 3) to the *XL6009* enable pin.
+
+![Drawing](https://res.cloudinary.com/rs-designspark-live/image/upload/c_limit,w_600/f_auto/v1/article/1975-1_4245f986d53258d45565b72010f9f7869775c6c0)
 
 Not all boards expose the *Enable* pin. If it is available, in most PCB designs you find it close to the *input* terminals as a separate connection labeled **En**.
 
