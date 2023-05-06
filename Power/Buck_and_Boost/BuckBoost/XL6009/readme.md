@@ -9,4 +9,4 @@ The regulator chip *XL6009* is a popular high-power *buck and boost* converter w
 | --- | --- | --- | --- | --- |
 | 3.2-32V | 4-38V | 4A | 400kHz | low (€ 0.70/piece for boost-only, € 2 for buck-boost) |
 
-[Datasheet]([https://datasheet.lcsc.com/szlcsc/Shenzhen-Suosemi-Tech-SX1308_C78162.pdf](https://www.haoyuelectronics.com/Attachment/XL6009/XL6009-DC-DC-Converter-Datasheet.pdf)
+[Datasheet](https://www.haoyuelectronics.com/Attachment/XL6009/XL6009-DC-DC-Converter-Datasheet.pdf)
