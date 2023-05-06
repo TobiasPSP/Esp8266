@@ -6,6 +6,8 @@ The regulator chip *SX1308* is a small and cheap boost converter with the follow
 | --- | --- | --- | --- | --- |
 | 2-24V | 2-28V | 2A | 1.2MHz | low (€ 0.40/piece) |
 
+> While you can buy this boost converter as a fully-functional PCB at some online stores for as much as €6 per piece, the real retail price for the very same product at places like *AliExpress* is around € 0.40, most often sold in packs of 10 pieces.
+
 ## Real World Evaluation
 
 The claims for this chip often do not match reality:
