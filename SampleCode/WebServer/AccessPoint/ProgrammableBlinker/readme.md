@@ -36,6 +36,7 @@ Likewise, you can now change the pattern in any way you wish.
 > Adding this combination of Access Point and asynchronous web server to your projects provides you with enourmous flexibility, yet the solution is so light-weight that it won't slow down operations even on a simple ESP8266.
 
 ```c++
+
 #include <Arduino.h>
 
 // wifi library is included in platform.io, no need to add dependency
@@ -108,12 +109,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 </body>
 </html>)rawliteral";
 
-void ResetPattern1()
-{
-  pattern1Timer = millis(); // millis() when pattern part was activated
-  pattern1State = true;    // start with lamp turned on
-}
-
+// take csv string and write it as integers to submitted array, returning total populated array elements
 int separate (
     String str,
     char   **p,
@@ -177,11 +173,7 @@ void setup() {
   pinMode(PINMOSFET1, OUTPUT);
   pinMode(PINMOSFET2, OUTPUT);
   pinMode(LED_BUILTIN, OUTPUT);
-  ResetPattern1(); 
-  // turn lamp on for first part of pattern
-  pattern1State = !pattern1State;
-  SwitchLampPattern1(pattern1State);
-
+  
   // Connect to WiFi
   Serial.println("Setting AP (Access Point)");
   Serial.print("Setting IP address ... ");
@@ -194,6 +186,10 @@ void setup() {
   IPAddress IP = WiFi.softAPIP();
   Serial.print("AP IP address: ");
   Serial.println(IP);
+
+
+  pattern1Timer = millis(); // millis() when pattern part was activated 
+  SwitchLampPattern1(pattern1State);
 
   // define actions for various urls:
 
