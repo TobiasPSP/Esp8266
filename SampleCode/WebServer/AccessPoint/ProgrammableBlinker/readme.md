@@ -223,7 +223,7 @@ void setup() {
   server.on("/update", HTTP_GET, [] (AsyncWebServerRequest *request) {
     String param1;
     
-    // GET input1 value on <ESP_IP>/update?output=<inputMessage1>&state=<inputMessage2>
+    // GET input1 value on <ESP_IP>/update?timing=1,2,3,4,5...
     if (request->hasParam(PARAM_INPUT_1)) {
       param1 = request->getParam(PARAM_INPUT_1)->value();
       pattern1Size = separate (param1, sPtr, SPTR_SIZE, pattern1);
