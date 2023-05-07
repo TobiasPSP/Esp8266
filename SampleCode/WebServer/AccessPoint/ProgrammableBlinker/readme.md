@@ -2,7 +2,11 @@
 
 This project illustrates how you can add remote access to your *ESP8266* projects to control and adjust parameters via WiFi.
 
-The sketch produces a high frequency blink pattern simulating a police emergency light. In the background, the sketch establishes a Wifi Access Point so you can use any Internet-enabled device like a smartphone or laptop to connect to it.
+The sketch produces a high frequency blink pattern simulating a police emergency light. In the background, the sketch establishes a Wifi Access Point so you can use any Internet-enabled device like a smartphone or laptop to connect to it, and then asynchronously in the background listens for requests via WiFi.
+
+Your primary code - in this example the LED blinker - works untouched in the foreground inside the *loop()* function.
+
+## WiFi Connection Details
 
 By default, the sketch uses these details:
 
