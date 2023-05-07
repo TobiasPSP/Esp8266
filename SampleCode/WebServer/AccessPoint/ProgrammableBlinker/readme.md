@@ -10,9 +10,9 @@ Your primary code - in this example the LED blinker - works untouched in the for
 
 By default, the sketch uses these details:
 
-**SSID**: internal
-**Password**: testtest
-**IP Address**: 192.168.1.1
+* **SSID**: internal
+* **Password**: testtest
+* **IP Address**: 192.168.1.1
 
 The internal *ESP8266* LED will start a blinking pattern simulating a *Hänsch Movia* German police emergency light.
 
