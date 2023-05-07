@@ -67,7 +67,7 @@ int pattern1[100] = { 154,45,16,25,15,25,16,188 };
 int pattern1Size = 8;
 long pattern1Timer = 0;        // millis() when pattern part was activated
 int pattern1Count = 0;         // index into array pointing at next pattern part
-bool pattern1State = true;    // start with lamp turned off
+bool pattern1State = true;    // start with lamp turned on
 int brightness = 255;
 
 
@@ -111,7 +111,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 void ResetPattern1()
 {
   pattern1Timer = millis(); // millis() when pattern part was activated
-  pattern1State = false;    // start with lamp turned off
+  pattern1State = true;    // start with lamp turned on
 }
 
 int separate (
